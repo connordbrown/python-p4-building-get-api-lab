@@ -84,7 +84,7 @@ def bakery_by_id(id):
 @app.route('/baked_goods/by_price')
 def baked_goods_by_price():
     sorted_goods = []
-    # use attribute
+    # use attribute for sort
     for good in BakedGood.query.order_by(BakedGood.price.desc()).all():
         if bakery := Bakery.query.filter(Bakery.id == good.bakery_id).first():
             baked_good_dict = {
