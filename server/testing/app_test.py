@@ -141,10 +141,10 @@ class TestApp:
             prices = [baked_good.price for baked_good in BakedGood.query.all()]
             highest_price = max(prices)
 
-            b1 = BakedGood(name="Madeleine", price=highest_price + 1)
+            b1 = BakedGood(name="Madeleine", price=highest_price + 1, bakery=Bakery(name='Delightful donuts'))
             db.session.add(b1)
             db.session.commit()
-            b2 = BakedGood(name="Donut", price=highest_price - 1)
+            b2 = BakedGood(name="Donut", price=highest_price - 1, bakery=Bakery(name='Delightful donuts'))
             db.session.add(b2)
             db.session.commit()
 
@@ -166,10 +166,10 @@ class TestApp:
             prices = [baked_good.price for baked_good in BakedGood.query.all()]
             highest_price = max(prices)
 
-            b1 = BakedGood(name="Madeleine", price=highest_price + 1)
+            b1 = BakedGood(name="Madeleine", price=highest_price + 1, bakery=Bakery(name='Incredible crullers'))
             db.session.add(b1)
             db.session.commit()
-            b2 = BakedGood(name="Donut", price=highest_price - 1)
+            b2 = BakedGood(name="Donut", price=highest_price - 1, bakery=Bakery(name='Incredible crullers'))
             db.session.add(b2)
             db.session.commit()
 
